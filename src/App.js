@@ -1,25 +1,30 @@
-import logo from './logo.svg';
+//import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
+import GameCreation from './components/GameCreation';
+import LandingPage from './components/LandingPage';
+import JoinGame from './components/JoinGame';
+import Game from './components/Game';
+import Results from './components/Results';
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+          <Route path="/create" element={<GameCreation />} />
+          <Route path="/join/:gameId" element={<JoinGame />} />
+          <Route path="/game/:gameId" element={<Game />} />
+          <Route path="/results" element={<Results player1={{name: 'Player 1', score: 2, results: [true, false, true]}} player2={{name: 'Player 2', score: 1, results: [false, true, false]}} />} />
+          {/* Add more routes as you create new components */}
+        </Routes>
+      </Router>
     </div>
   );
 }
 
 export default App;
+

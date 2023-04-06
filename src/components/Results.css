@@ -1,0 +1,31 @@
+.results {
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .result-boxes {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  .result-box {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.5rem;
+    border: 1px solid;
+  }
+  
+  .correct {
+    color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .incorrect {
+    color: #dc3545;
+    border-color: #dc3545;
+  }
+  
